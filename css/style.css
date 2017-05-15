@@ -1,0 +1,451 @@
+/*
+ * stylesheet for mehadrin index
+ * 
+ * author: estyr@mediaotg.com
+ * date: May 12, '17
+ */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:600');
+@font-face {
+	font-family:"The Bold Font";
+	src:url("../fonts/theboldfont.eot?") format("eot"),
+	url("../fonts/theboldfont.woff") format("woff"),
+	url("../fonts/theboldfont.ttf") format("truetype"),
+	url("../fonts/theboldfont.svg#TheBoldFont") format("svg");
+	font-weight:normal;
+	font-style:normal;
+}
+@font-face {
+    font-family: 'geomaniacdemo';
+    src: url('../fonts/geomaniac-demo-webfont.woff2') format('woff2'),
+         url('../fonts/geomaniac-demo-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Global */
+*{
+	margin: 0;
+	padding: 0;
+
+	font-size: 100%;
+}
+body{
+	background: url('../images/background.jpg') repeat-y;
+	background-size: 100% auto;
+}
+a, p, li, label, input, button{
+	font-family: 'geomaniacdemo', sans-serif;
+	font-weight: normal;
+	font-size: 1.5em;
+	color: #EC2229;
+}
+h1, h2, h3{
+	font-family: 'The Bold Font', sans-serif;
+}
+h1{
+	font-size: 8em;
+	color: #F99F1C;
+}
+h2{
+	font-size: 5em;
+	color: #FAAF18;
+}
+h3{
+	font-size: 3em;
+	color: #FAAF18;
+}
+.clearfix{
+	float: none !important;
+	clear: both !important;
+}
+
+/* Header */
+header nav{
+	max-width: 1400px;
+	margin: 50px auto;
+
+	display: flex;
+	justify-content: space-around;
+}
+header a{
+	text-transform: uppercase;
+	text-decoration: none;
+
+	display: block;
+	position: relative;
+}
+header a::after{
+	content: ' ';
+	width: 0;
+	height: 2.5px;
+	background: #EC2229;
+	position: absolute;
+	top: 100%;
+	left: -2px;
+	margin-top: 3px;
+	display: block;
+
+	transition: .5s;
+}
+header a:hover::after, header a.active::after{
+	width: 100%;
+}
+
+/* Search Section */
+#home{
+	max-width: 1400px;
+	margin: auto;
+
+	text-align: center;
+}
+#home #logo{
+	width: 50%;
+	max-width: 500px;
+	margin: 100px auto;
+}
+#home #logo img{
+	width: 100%;
+}
+#home h3{
+	position: relative;
+	width: 9em;
+	max-width: 100%;
+	margin: 0 auto 30px;
+}
+#home h3::after{
+	content: ' ';
+	display: block;
+	width: calc(100% + 50px);
+	height: 10px;
+	background: #F8CB7F;
+
+	position: absolute;
+	top: 100%;
+	left: -25px;
+}
+
+#home .search{
+	position: relative;
+	width: 90%;
+	max-width: 40em;
+	height: 3em;
+	margin: 50px auto 10em;
+}
+#home .search label{
+	text-transform: lowercase;
+	position: absolute;
+	top: .5em;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+#home .search img{
+	position: absolute;
+	left: 0;
+	height: 80%;
+	width: auto;
+}
+#home #searchbar{
+	border: none;
+	background: transparent;
+	border-bottom: 2.5px solid #EC2229;
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	text-align: center;
+}
+#home #searchbar:focus, #home #searchbar:active{
+	outline: none;
+}
+#home #searchbar:focus + label{
+	display: none;
+}
+#home button{
+	background: transparent;
+	border: 2px solid #EC2229;
+	color: #EC2229;
+	padding: 20px 50px;
+	text-transform: lowercase;
+	cursor: pointer;
+
+	position: absolute;
+	bottom: -5em;
+    left: calc(50% - 2.5em - 20px);
+}
+#home button:focus{
+	outline: none;
+}
+
+@media(max-width: 700px){
+	a, p, li, label, input, button{
+		font-family: 'geomaniacdemo', sans-serif;
+		font-weight: normal;
+		font-size: 1.2em;
+		color: #EC2229;
+	}
+	#home #logo {
+	    margin: 50px auto;
+	}
+	h1{
+		font-size: 5em;
+	}
+	h3{
+		font-size: 2em;
+	}
+	#home h3::after{
+		width: 100%;
+		left: 0;
+	}
+	#home .search{
+		margin-top: 40px;
+	}
+	#home .search label, #home .search input{
+		font-size: 1em;
+	}
+	#home .search img{
+		top: auto;
+		bottom: calc(0px - 4em - 20px);
+	    left: calc(50% - 2.5em - 5px);
+	    height: 2em;
+	}
+
+}
+@media(max-width: 400px){
+	a, p, li, label, input, button{
+		font-family: 'geomaniacdemo', sans-serif;
+		font-weight: normal;
+		font-size: 1em;
+		color: #EC2229;
+	}	
+	#home .search img{
+		top: auto;
+		bottom: calc(0px - 3em - 20px);
+	    left: calc(50% - 2.5em - 10px);
+	    height: 2em;
+	}
+}
+
+/***** About *****/
+#about .section{
+	position: relative;
+	padding: 200px 50px;
+}
+#about .section.scallop::before{
+	content: ' ';
+	width: 100%;
+	height: 20px;
+	display: block;
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+}
+#about .section.scallop::after{
+	content: ' ';
+	width: 100%;
+	height: 20px;
+	display: block;
+	position: absolute;
+	top: 100%;
+	left: 0;
+}
+#about .section .wrapper{
+	max-width: 1400px;
+	margin: auto;
+}
+#about .section.scallop{
+	text-align: right;
+}
+#about .section h2{
+	position: relative;
+	display: inline-block;
+	margin-bottom: 25px;
+}
+#about .section h2::after{
+	content: ' ';
+	height: 15px;
+	width: 100%;
+	background: #fff;
+	display: block;
+	position: absolute;
+	top: 100%;
+	left: 0;
+}
+#about .section p{
+	max-width: 800px;
+	font-family: 'Work Sans', sans-serif;
+	line-height: 1.2em;
+}
+#about .section.scallop p{
+	float: right;
+}
+
+/* Quality */
+#about .quality{
+	background: #4C2A19;
+	position: relative;
+	z-index: 50;
+}
+#about .quality h2{
+	color: #A8734A;
+}
+#about .quality h2::after{
+	background: #C1946A;
+}
+#about .quality p{
+	color: #C49A6C;
+	line-height: 1.5em;
+}
+#about .quality .light{
+	color: #A8734A;
+}
+#about .quality .medium{
+	color: #8F5D35;
+}
+#about .quality .dark{
+	color: #70422B;
+}
+#about .quality::before{
+	background: url('../images/quality-border-top.png');
+}
+#about .quality::after{
+	background: url('../images/quality-border-bottom.png');
+}
+
+/* Innovation */
+#about .innovation{
+	background: url('../images/innovation-bg.jpg');
+	background-size: 120%;
+	background-position: center center;
+	position: relative;
+	z-index: 20;
+}
+#about .innovation h2{
+	color: #EE333E;
+}
+#about .innovation h2::after{
+	background: #F15F6E;
+}
+#about .innovation p{
+	color: #EE333E;
+	line-height: 1.5em;
+}
+#about .innovation .light{
+	color: #F6A2AD;
+}
+#about .innovation .medium{
+	color: #F16775;
+}
+#about .innovation .dark{
+	color: #C92233;
+}
+
+/* Technique */
+#about .technique{
+	background: #A0CD47;
+	background-size: 120%;
+	background-position: center center;
+	position: relative;
+	z-index: 40;
+}
+#about .technique h2{
+	color: #F1EF92;
+}
+#about .technique h2::after{
+	background: #FBF6BB;
+}
+#about .technique p{
+	color: #6DBA45;
+	line-height: 1.5em;
+}
+#about .technique .light{
+	color: #D4E166;
+}
+#about .technique .medium{
+	color: #61AA45;
+}
+#about .technique .dark{
+	color: #569B43;
+}
+#about .technique::before{
+	background: url('../images/technique-border-top.png');
+}
+#about .technique::after{
+	background: url('../images/technique-border-bottom.png');
+}
+
+/* Kosher */
+#about .kosher{
+	background: url('../images/kosher-bg.jpg');
+	background-size: 120%;
+	background-position: center center;
+	position: relative;
+	z-index: 30;
+}
+#about .kosher h2{
+	color: #002A3C;
+}
+#about .kosher h2::after{
+	background: #01445B;
+}
+#about .kosher p{
+	color: #017AB5;
+	line-height: 1.5em;
+}
+#about .kosher .light{
+	color: #9CB2D2;
+}
+#about .kosher .medium{
+	color: #079BD5;
+}
+#about .kosher .dark{
+	color: #003F54;
+}
+#about .kosher::before{
+	background: url('../images/technique-border-top.png');
+}
+#about .kosher::after{
+	background: url('../images/technique-border-bottom.png');
+}
+
+/* Technique */
+#about .taste{
+	background: #F2738F;
+	background-size: 120%;
+	background-position: center center;
+	position: relative;
+	z-index: 40;
+}
+#about .taste h2{
+	color: #BF405B;
+}
+#about .taste h2::after{
+	background: #CC5A78;
+}
+#about .taste p{
+	color: #BC2F55;
+	line-height: 1.5em;
+}
+#about .taste .light{
+	color: #F6A1AD;
+}
+#about .taste::before{
+	background: url('../images/taste-border-top.png');
+}
+#about .taste::after{
+	background: url('../images/taste-border-bottom.png');
+}
+
+/* Last */
+#about .last{
+	background: url('../images/last-bg.jpg');
+	background-size: 100%;
+	background-position: bottom center;
+	position: relative;
+	z-index: 30;
+	padding: 300px 0;
+}

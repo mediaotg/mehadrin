@@ -1,0 +1,284 @@
+/*
+ * stylesheet for mehadrin index
+ * 
+ * author: estyr@mediaotg.com
+ * date: May 12, '17
+ */
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:600');
+@font-face {
+	font-family:"The Bold Font";
+	src:url("../fonts/theboldfont.eot?") format("eot"),
+	url("../fonts/theboldfont.woff") format("woff"),
+	url("../fonts/theboldfont.ttf") format("truetype"),
+	url("../fonts/theboldfont.svg#TheBoldFont") format("svg");
+	font-weight:normal;
+	font-style:normal;
+}
+@font-face {
+    font-family: 'geomaniacdemo';
+    src: url('../fonts/geomaniac-demo-webfont.woff2') format('woff2'),
+         url('../fonts/geomaniac-demo-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Global */
+*{
+	margin: 0;
+	padding: 0;
+
+	font-size: 100%;
+}
+body{
+	background: url('../images/background.jpg') repeat-y;
+	background-size: 100% auto;
+}
+a, p, li, label, input, button{
+	font-family: 'geomaniacdemo', sans-serif;
+	font-weight: normal;
+	font-size: 1.5em;
+	color: #EC2229;
+}
+h1, h2, h3{
+	font-family: 'The Bold Font', sans-serif;
+}
+h1{
+	font-size: 8em;
+	color: #F99F1C;
+}
+h2{
+	font-size: 5em;
+	color: #FAAF18;
+}
+h3{
+	font-size: 3em;
+	color: #FAAF18;
+}
+h5{
+	font-family: 'TheBoldFont', sans-serif;
+	color: #FAAF18;
+	font-size: .9em;
+}
+.clearfix{
+	float: none !important;
+	clear: both !important;
+}
+
+/* Header */
+header nav{
+	max-width: 1400px;
+	margin: 50px auto;
+
+	display: flex;
+	justify-content: space-around;
+}
+header a{
+	text-transform: uppercase;
+	text-decoration: none;
+	height: 1em;
+
+	display: block;
+	position: relative;
+}
+header a::after{
+	content: ' ';
+	width: 0;
+	height: 2.5px;
+	background: #EC2229;
+	position: absolute;
+	top: 100%;
+	left: -2px;
+	margin-top: 3px;
+	display: block;
+
+	transition: .5s;
+}
+header a:hover::after, header a.active::after{
+	width: 100%;
+}
+header #logo{
+	height: 3em;
+	width: 7em;
+	margin-top: -1em;
+	margin-left: 3em;
+}
+header #logo img{
+	max-width: 100%;
+	height: auto;
+}
+header #logo:hover::after{
+	display: none;
+}
+
+/* Search Section */
+#search{
+	max-width: 1400px;
+	margin: auto;
+
+	text-align: center;
+}
+#search h2{
+	position: relative;
+	display: inline-block;
+	max-width: 100%;
+	margin: 100px auto 30px;
+}
+#search h2::after{
+	content: ' ';
+	display: block;
+	width: calc(100% + 50px);
+	height: 10px;
+	background: #F8CB7F;
+
+	position: absolute;
+	top: 100%;
+	left: -25px;
+}
+
+#search .search{
+	position: relative;
+	width: 90%;
+	max-width: 40em;
+	height: 3em;
+	margin: 50px auto 10em;
+}
+#search .search label{
+	text-transform: lowercase;
+	position: absolute;
+	top: .5em;
+	left: 0;
+	width: 100%;
+	text-align: center;
+}
+#search .search img{
+	position: absolute;
+	left: 0;
+	height: 80%;
+	width: auto;
+}
+#search #searchbar{
+	border: none;
+	background: transparent;
+	border-bottom: 2.5px solid #EC2229;
+	display: block;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	text-align: center;
+}
+#search #searchbar:focus, #search #searchbar:active{
+	outline: none;
+}
+#search #searchbar:focus + label{
+	display: none;
+}
+#search button{
+	background: transparent;
+	border: 2px solid #EC2229;
+	color: #EC2229;
+	padding: 20px 50px;
+	text-transform: lowercase;
+	cursor: pointer;
+
+	position: absolute;
+	bottom: -5em;
+    left: calc(50% - 2.5em - 20px);
+}
+#search button:focus{
+	outline: none;
+}
+
+#search #app{
+	padding-top: 50px;
+}
+#search #app > div{
+	width: 100px;
+	height: 220px;
+	display: inline-block;
+	padding: 0 30px;
+	position: relative;
+}
+#search #app > div a{
+	text-decoration: none;
+}
+#search #app > div img{
+	max-width: 100%;
+	height: auto;
+	z-index: 3;
+	transition: .5s;
+}
+#search #app > div a:hover img{
+	transform: scale(1.2);
+}
+#search #app > div::after{
+	content: ' ';
+	display: block;
+	width: 100%;
+	height: 15px;
+	background: #FAAF18;
+	position: absolute;
+	top: 135px;
+	left: 0;
+	z-index: -1;
+}
+#search #app > div h5{
+	margin-top: 20px;
+	font-size: .7em;
+}
+#search #app .oh-no{
+	position: absolute;
+	top: 20vh;
+	max-height: 100vh;
+	width: auto;
+	z-index: -1;
+}
+
+@media(max-width: 700px){
+	a, p, li, label, input, button{
+		font-family: 'geomaniacdemo', sans-serif;
+		font-weight: normal;
+		font-size: 1.2em;
+		color: #EC2229;
+	}
+	h1{
+		font-size: 5em;
+	}
+	h3{
+		font-size: 2em;
+	}
+	#search h3::after{
+		width: 100%;
+		left: 0;
+	}
+	#search .search{
+		margin-top: 40px;
+	}
+	#search .search label, #search .search input{
+		font-size: 1em;
+	}
+	#search .search img{
+		top: auto;
+		bottom: calc(0px - 4em - 20px);
+	    left: calc(50% - 2.5em - 5px);
+	    height: 2em;
+	}
+
+}
+@media(max-width: 400px){
+	a, p, li, label, input, button{
+		font-family: 'geomaniacdemo', sans-serif;
+		font-weight: normal;
+		font-size: 1em;
+		color: #EC2229;
+	}	
+	#search .search img{
+		top: auto;
+		bottom: calc(0px - 3em - 20px);
+	    left: calc(50% - 2.5em - 10px);
+	    height: 2em;
+	}
+}
